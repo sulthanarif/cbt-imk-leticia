@@ -1,0 +1,608 @@
+:root {
+  --primary-color: #0099ff;
+  --secondary-color: #f0f4f7;
+  --highlight-color: #f5c542;
+  --text-color: #333;
+  --border-radius: 10px;
+}
+
+body {
+  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-and-profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.exam-content {
+  display: flex;
+  gap: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.navigation {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 24px;
+  width: 250px;
+  position: sticky;
+  top: 80px;
+  align-self: flex-start;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+#pause-exam {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 20px;
+}
+
+#pause-exam:hover {
+  background-color: #5a6268;
+}
+
+.submit-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit-container-essay {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#submit-exam {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+#submit-exam:hover {
+  background-color: #0056b3;
+}
+
+#go-to-essay {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+#go-to-essay:hover {
+  background-color: #0056b3;
+}
+
+.exam-title {
+  font-size: 1.2rem;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  color: white;
+  margin-top: 0;
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Mengatur tombol di kiri dan kanan */
+  margin-top: 20px; /* Tambahkan jarak di atas tombol */
+}
+
+.button-container .btn {
+  width: 48%; /* Atur lebar tombol agar tidak terlalu lebar */
+}
+
+.timer {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.2em;
+  float: right;
+}
+
+.nav-buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.nav-button {
+  background-color: var(--secondary-color);
+  border: none;
+  padding: 10px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.nav-button:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.nav-button.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+
+.nav-button.unsure-active {
+  background-color: var(--highlight-color);
+  color: white;
+}
+
+.nav-button.mcq {
+  background-color: #e0e0e0;
+}
+
+.nav-button.essay:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.nav-button.essay.answered {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.submit {
+  margin-top: 20px;
+}
+
+.submit button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.submit button:hover {
+  background-color: #0077cc;
+}
+
+.questions {
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 20px;
+}
+
+.question-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navigation .exam-title {
+  display: none;
+}
+
+.question-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.option {
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.option:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--primary-color);
+}
+
+.option.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.unsure {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.unsure input[type="checkbox"] {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.unsure label {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.question-image {
+  margin-bottom: 20px;
+}
+
+.question-image img {
+  max-width: 100%;
+  border-radius: var(--border-radius);
+}
+
+.image-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.image-option {
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 160px;
+}
+
+.image-option img {
+  max-width: 100%;
+  height: 100px;
+  max-height: 150px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.image-option.active {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 10px var(--primary-color);
+}
+
+.questions-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.exam-title {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  order: -1;
+  /* Memastikan exam-title muncul di atas */
+}
+
+.exam-title h1 {
+  color: var(--text-color);
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 24px;
+  text-align: left;
+}
+
+.exam-title p {
+  color: #666;
+  margin: 0;
+  font-size: 16px;
+  text-align: left;
+}
+  .progress-label {
+    font-size: 14px;
+    color: var(--text-color);
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
+  #essay-progress {
+    background-color: var(--primary-color);
+  }
+
+
+@media (max-width: 960px) {
+  .exam-content {
+    flex-direction: column;
+  }
+
+  .navigation {
+    width: 40%;
+    position: static;
+    max-height: none;
+    margin-bottom: 30px;
+  }
+
+  .image-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .logo-and-profile {
+    align-items: flex-start;
+  }
+
+  .profile {
+    margin-top: 10px;
+  }
+
+  .nav-buttons {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+  }
+
+  .image-option {
+    grid-template-columns: 1fr;
+  }
+
+  .navigation {
+    width: 45%;
+    position: static;
+    max-height: none;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .question-card {
+    padding: 20px;
+  }
+
+  .nav-buttons {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .modal-content {
+    padding: 15px;
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .image-option {
+    grid-template-columns: 1fr;
+  }
+
+  .navigation {
+    width: 75%;
+    position: static;
+    max-height: none;
+    margin-bottom: 30px;
+  }
+}
+
+/* Tambahan CSS untuk fitur baru */
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.progress {
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+.modal h2 {
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.modal p {
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  width: 150px;
+}
+
+.btn-primary:hover {
+  background-color: #0077cc;
+}
+
+.btn-secondary {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background-color: #c0c0c0;
+}
+
+#examSummary {
+  margin-bottom: 20px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.summary-label {
+  font-weight: bold;
+}
+
+.summary-value {
+  color: var(--primary-color);
+}
